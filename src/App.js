@@ -2,9 +2,22 @@ import React from "react";
 import "./styles.css";
 
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  function handleClick() {
+    alert("You clicked me!");
+  }
+  return (
+    <Button
+      color="red"
+      disabled={false}
+      text="Click me"
+      yalla = {handleClick}
+    />
+  );
 }
 
-function Button({color, disabled, text}) {
-  return <button style={{ backgroundColor: color }} {disabled ? "disabled": null}> {text}</button>;
+function Button({ color, disabled, text, yalla }) {
+
+
+  
+  return <button disabled={disabled} style={{ backgroundColor: color }} onClick={yalla} > {text}</button>;
 }
